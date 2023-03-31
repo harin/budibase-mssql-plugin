@@ -1,0 +1,56 @@
+{
+  "type": "datasource",
+  "metadata": {},
+  "schema": {
+    "docs": "https://docs.budibase.com",
+    "friendlyName": "Private MS-SQL",
+    "type": "Relational",
+    "description": "MSSQL Connector",
+    "datasource": {
+      "user": {
+        "type": "string",
+        "required": true
+      },
+      "password": {
+        "type": "string",
+        "required": true
+      },
+      "server": {
+        "type": "string",
+        "required": true
+      },
+      "port": {
+        "type": "string",
+        "required": true
+      },
+      "database": {
+        "type": "string",
+        "required": true
+      },
+      "schema": {
+        "type": "string",
+        "required": true
+      },
+      "encrypt": {
+        "type": "boolean",
+        "required": true
+      },
+      "selfSign": {
+        "type": "boolean",
+        "required": true
+      }
+    },
+    "query": {
+      "read": {
+        "type": "sql",
+        "fields": {
+          "queryString": {
+            "display": "Query string",
+            "type": "string",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}

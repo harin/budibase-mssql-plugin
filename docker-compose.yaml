@@ -1,0 +1,25 @@
+version: "3"
+services:
+  budibase:
+    restart: unless-stopped
+    image: budibase/budibase:latest
+    ports:
+      - 10000:80
+    environment:
+      API_ENCRYPTION_KEY: U6BzUdX4THvPU95PsS9wIql7saPTacRG
+      JWT_SECRET: 098nT70QBiXFFzJrkWPlmjBHKGgaHhNQ
+      MINIO_ACCESS_KEY: 27w09aCkQUeCcwI5pq7v3gCCB7EjCizk
+      MINIO_SECRET_KEY: wkmx9sXpLmqCVm2mA6m5v8I4HRMSyoIk
+      REDIS_PASSWORD: RaAP5RwmA1IaoVULMvb8a2bQjPrWcCZn
+      INTERNAL_API_KEY: aYMyXWmyzW1IzHxjy5XXMLPgW7XWj9xX
+      COUCHDB_USER: admin
+      COUCHDB_PASSWORD: 0Cqm9rNljYkALEd0nWhPGHFJfM7eu59n
+      PLUGINS_DIR: /plugins
+      BB_ADMIN_USER_EMAIL: admin@admin.com
+      BB_ADMIN_USER_PASSWORD: admin
+    volumes:
+      - budibase_data:/data
+      - /home/harin/projects/budibase-plugins/private-mssql:/plugins
+volumes:
+  budibase_data:
+    driver: local
